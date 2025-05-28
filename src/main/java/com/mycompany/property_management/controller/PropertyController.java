@@ -4,6 +4,7 @@ package com.mycompany.property_management.controller;
 import com.mycompany.property_management.dto.PropertyDTO;
 import com.mycompany.property_management.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +15,10 @@ import java.util.List;
 @RequestMapping("/api/v1") //class level mapping of a url to a controller class
 public class PropertyController {
 
-    @value("${pms.dummy : }")
+    @Value("${pms.dummy : }")
     private String dummy;
 
-    @value("${spring.datasource.url : }")
+    @Value("${spring.datasource.url : }")
     private String dbUrl;
 
     @Autowired
